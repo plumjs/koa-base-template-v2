@@ -1,13 +1,15 @@
-## description
+## Description
 - server template based on koa2
+- update from koa-base-template
 
-## details
-- via koa2
-- unit test by jest
-- use eslint and prettier
-- generate document by typedoc 
+## Details
+- extend: koa2
+- unit test: jest
+- formatter: eslint and prettier
+- code doc: typedoc 
+- design doc: gitbook, /design/
 
-## scripts
+## Usage
 - test: unit test
 ```bash
 npm run test
@@ -39,7 +41,7 @@ npm run docs
 npm run dev
 ```
 
-## todo list
+## Todo list
 - [x] lint
 - [x] test
 - [x] curd template
@@ -51,5 +53,8 @@ npm run dev
 - [ ] authorization
 
 
-## documents
+## Code documents
 - [document](./docs/globals.md)
+
+## Design documents
+- [document](./design/index.md)

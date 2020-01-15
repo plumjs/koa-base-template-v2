@@ -1,3 +1,3 @@
-import { StudentError } from './student.error'
+import { ValidateError } from './student.error'
 
-export { StudentError }
+export { ValidateError }

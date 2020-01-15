@@ -1,15 +1,18 @@
 import * as Router from 'koa-router'
-import { create, update, findOne, findMany, del, patch } from './ctrls'
+import { Student } from './models'
+import { RestHepler } from '../../rest'
 
 const router: any = new Router({
   prefix: '/v1/students',
 })
+const ctrl = new Student()
+const rest = new RestHepler(ctrl)
 
-router.post('/', create)
-router.put('/', update)
-router.patch('/', patch)
-router.get('/:id', findOne)
-router.get('/', findMany)
-router.delete('/:id', del)
+router.post('/', rest.create)
+router.put('/', rest.put)
+router.patch('/', rest.patch)
+router.get('/:id', rest.findOne)
+router.get('/', rest.findMany)
+router.delete('/:id', rest.delete)
 
 export { router }

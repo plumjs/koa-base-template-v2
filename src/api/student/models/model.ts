@@ -1,5 +1,18 @@
 import { model, PaginateModel } from 'mongoose'
 import { IStudent } from './interface'
 import { StudentSchema } from './schema'
+import { CreateValidator, PutValidator, PatchValidator, FindValidator, DeleteValidator } from '../validators';
+import { RestAdapter } from '../../../rest';
 
-export const StudentModel: PaginateModel<IStudent> = model('student', StudentSchema)
+const StudentModel: PaginateModel<IStudent> = model('student', StudentSchema)
+
+class Student extends RestAdapter<IStudent> {
+    constructor(
+        public model = StudentModel,
+        public validators = { CreateValidator, PutValidator, PatchValidator, FindValidator, DeleteValidator }
+    ) {
+        super()
+    }
+}
+
+export { StudentModel, Student }
